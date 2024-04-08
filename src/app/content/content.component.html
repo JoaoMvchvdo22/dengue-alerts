@@ -1,0 +1,108 @@
+<main (scroll)="onScroll($event)">
+  <article class="intro" #divMain>
+    <h1>Introdução</h1>
+    <p>
+      A dengue é uma doença viral transmitida pela picada do mosquito Aedes aegypti, que possui quatro sorotipos (DENV-1, DENV-2, DENV-3 e DENV-4) e cada um deles pode apresentar diferentes interações com os anticorpos humanos.
+É importante conhecer e praticar medidas de prevenção para evitar a propagação da doença. Agora vamos te auxiliar a identificar e se precaver desta doença
+    </p>
+  </article>
+
+  <article class="read_more">
+    <button
+      type="button"
+      (click)="onReadMore()"
+    >
+      {{isReadMore ? "Mostar menos" : "Mostrar Mais"}}
+    </button>
+  </article>
+
+  <article class="content_topics" [ngClass]="{'show': isReadMore}">
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}">
+      <h1>Quais são os sintomas?</h1>
+      <ul>
+        <li>Febre alta</li>
+        <li>Dores musculares intensas</li>
+        <li>Dor de cabeça</li>
+        <li>Dor atrás dos olhos</li>
+        <li>Manchas vermelhas na pele</li>
+      </ul>
+      <div class="img_content" *ngIf="isReadMore">
+        <img src="./../../assets/images/febre.jpeg" alt="">
+      </div>
+    </section>
+
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}">
+      <h1>Como se transmite a doença?</h1>
+      <ul>
+        <li>Através da picada de um mosquito chamado Aedes aegypti</li>
+        <li>e lembrando que é transmitida de pessoa para pessoa</li>
+      </ul>
+      <div class="img_content" *ngIf="isReadMore">
+        <img src="./../../assets/images/mosquito.jpeg" alt="">
+      </div>
+    </section>
+
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}">
+      <h1>E como eu posso me previnir?</h1>
+      <ul>
+        <li>Limpe regularmente recipientes que acumulam água (vasos de plantas, pneus, garrafas vazias).</li>
+        <li>Mantenha caixas d`água e piscinas sempre tampadas.</li>
+        <li>Use repelente de insetos regularmente.</li>
+        <li>Instale telas em janelas e portas.</li>
+        <li>Use roupas que cubram a maior parte do corpo.</li>
+        <li>Evite acumular lixo e entulho em áreas próximas à sua residência.</li>
+      </ul>
+      <div class="img_content" *ngIf="isReadMore">
+        <img src="./../../assets/images/prevencao.jpeg" alt="">
+      </div>
+    </section>
+
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}">
+      <h1>Acho que fui picado, estou com sintomas! E agora, como tratar?</h1>
+      <ul>
+        <li>Procure assistência médica se apresentar sintomas da dengue.</li>
+        <li>O diagnóstico é feito por meio de exames de sangue.</li>
+        <li>Não há tratamento específico para a dengue, apenas medidas para aliviar os sintomas.</li>
+      </ul>
+    </section>
+
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}" style="margin-top: 24px">
+      <h1>Epidemiologia da dengue nas Américas</h1>
+      <ul>
+        <li>O ano de 2023 foi o ano de maior registro de casos de dengue na região das Américas, com um total de 4.565.911 casos, incluindo 7.653 (0,17%) casos graves e 2.340 óbitos (taxa de letalidade de 0,051%).
+          Essa situação de alta transmissão foi estendida a 2024, em que, desde a semana epidemiológica (SE) 1 até a SE 5, foram registrados 673.267 casos de dengue, dos quais 700 foram graves (0,1%) e 102 casos foram fatais (taxa de letalidade de 0,015%). Esse
+          número representa um aumento de 157% em comparação com o mesmo período em 2023 e de 225% em comparação com a média dos últimos 5 anos.</li>
+      </ul>
+      <div class="img_content" *ngIf="isReadMore">
+        <img src="./../../assets/images/mapa-dengue.jpeg" alt="">
+      </div>
+    </section>
+
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}">
+      <h1>Venha se envolver na Prevenção!</h1>
+      <ul>
+        <li>Mobilize sua comunidade para eliminar criadouros de mosquitos.</li>
+        <li>Informe seus vizinhos sobre a importância da prevenção.</li>
+        <li>Participe de campanhas de conscientização promovidas pelo governo local.</li>
+      </ul>
+      <div class="img_content" *ngIf="isReadMore">
+        <img src="./../../assets/images/mapa-dengue.jpeg" alt="">
+      </div>
+    </section>
+
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}">
+      <h1>Conclusão</h1>
+      <p>A prevenção da dengue é responsabilidade de todos. Ao adotar medidas simples em sua casa e envolver-se na conscientização da comunidade, você contribui para proteger a si mesmo e aos outros contra essa doença grave. Juntos, podemos combater a dengue e criar ambientes mais seguros para todos.</p>
+    </section>
+  </article>
+
+  <section class="to_top_btn">
+    <button
+      *ngIf="isShow"
+      type="button"
+      (click)="gotoTop()"
+    >
+      Voltar ao topo
+    </button>
+  </section>
+</main>

@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+
+  app-header {
+    height: 80px;
+  }
+
+  router-outlet {
+    display: none;
+  }
+
+  app-footer {
+    height: 40px;
+  }
+}
+
+::ng-deep app-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
