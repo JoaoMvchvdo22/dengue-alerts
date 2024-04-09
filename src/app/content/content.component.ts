@@ -10,6 +10,9 @@ export class ContentComponent implements OnInit {
   @ViewChild('divMain', { static: false })
   divMain!: ElementRef;
 
+  @ViewChild('divIntro', { static: false })
+  divIntro!: ElementRef;
+
   isReadMore: boolean = false;
 
   isShow: boolean = false;
@@ -27,9 +30,9 @@ export class ContentComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
 
-    const divMain = this.divMain.nativeElement.getBoundingClientRect();
+    const divIntro = this.divIntro.nativeElement.getBoundingClientRect();
 
-    if (divMain.top < 104) {
+    if (divIntro.top < -288) {
       this.isShow = true;
     } else {
       this.isShow = false;
@@ -37,11 +40,12 @@ export class ContentComponent implements OnInit {
   }
 
   gotoTop() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    if (this.divMain && this.divMain.nativeElement) {
+      this.divMain.nativeElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 
 }

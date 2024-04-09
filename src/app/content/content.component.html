@@ -1,5 +1,5 @@
-<main (scroll)="onScroll($event)">
-  <article class="intro" #divMain>
+<main (scroll)="onScroll($event)" #divMain>
+  <article class="intro" #divIntro>
     <h1>Introdução</h1>
     <p>
       A dengue é uma doença viral transmitida pela picada do mosquito Aedes aegypti, que possui quatro sorotipos (DENV-1, DENV-2, DENV-3 e DENV-4) e cada um deles pode apresentar diferentes interações com os anticorpos humanos.
@@ -74,7 +74,7 @@
           número representa um aumento de 157% em comparação com o mesmo período em 2023 e de 225% em comparação com a média dos últimos 5 anos.</li>
       </ul>
       <div class="img_content" *ngIf="isReadMore">
-        <img src="./../../assets/images/mapa-dengue.jpeg" alt="">
+        <img src="./../../assets/images/mapa-dengue.jpeg" alt="" style="max-height: 170px;">
       </div>
     </section>
 
@@ -86,7 +86,7 @@
         <li>Participe de campanhas de conscientização promovidas pelo governo local.</li>
       </ul>
       <div class="img_content" *ngIf="isReadMore">
-        <img src="./../../assets/images/mapa-dengue.jpeg" alt="">
+        <img src="./../../assets/images/maos.jpeg" alt="">
       </div>
     </section>
 
@@ -94,6 +94,13 @@
       <h1>Conclusão</h1>
       <p>A prevenção da dengue é responsabilidade de todos. Ao adotar medidas simples em sua casa e envolver-se na conscientização da comunidade, você contribui para proteger a si mesmo e aos outros contra essa doença grave. Juntos, podemos combater a dengue e criar ambientes mais seguros para todos.</p>
     </section>
+
+    <section class="div_wrapper" [ngStyle]="{'height': isReadMore ? '100%' : '0px'}">
+      <h1>Contatos Úteis</h1>
+      <p>Ministério da Saúde: Ligue 13</p>
+      <p>Secretaria de Saúde do seu município: (11) 3066 8000</p>
+    </section>
+
   </article>
 
   <section class="to_top_btn">
@@ -102,7 +109,7 @@
       type="button"
       (click)="gotoTop()"
     >
-      Voltar ao topo
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" fill="#fff"/></svg>
     </button>
   </section>
 </main>

@@ -63,7 +63,7 @@ main {
       flex-direction: column;
       height: 100%;
       transition: all 0.5s ease-in-out;
-      margin: 0 24px;
+      margin: 0 34px;
 
       .div_wrapper {
         h1 {
@@ -100,7 +100,6 @@ main {
             width: 100%;
             height: auto;
             border-radius: 8px;
-            max-height: 228px;
           }
         }
       }
@@ -113,10 +112,13 @@ main {
     right: 1em;
 
     button {
-      font-size: 20px;
+      height: 40px;
+      width: 40px;
       text-align: center;
       border-radius: 5px;
       outline: none;
+      background-color: #0b7ad1;
+      border: none;
     }
   }
 }
